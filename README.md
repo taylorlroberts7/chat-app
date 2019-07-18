@@ -1,44 +1,44 @@
+# Chat App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Run App Locally
 
-In the project directory, you can run:
+1. Install dependencies by running `yarn` or `npm install`
 
-### `npm start`
+2. Run app in development mode by running `yarn start` or `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Open [http://localhost:3000](http://localhost:3000) to view app in browser
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Run Tests Locally
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Install dependencies by running `yarn` or `npm install` (if you haven't already done so)
 
-### `npm run build`
+2. `yarn test` or `npm test`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## More About My Chat App Journey
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Initially I was planning on making a simple websocket server using `socket.io` that would broadcast all incoming messages to connected users.
+    - I then remembered that Firebase offers a realtime database service. After some research, I quickly decided that Firebase's realtime database was the right solution due to the fact that the data is synced across all clients in realtime.
+- After deciding to use the Firebase database, I had also initially decided to use their authentication service for the initial login experience.
+    - The authentication service was very simple to use, but I ultimately decided to keep it simple and just store the current user's `username` in `sessionStorage`
+- I think one of the most challenging things for me was working with React Router in TypeScript
+    - It's been quite some time since I had worked with React Router so I had to refresh my memory on how to get it working and then came the TS errors. It took me a while to figure out how to properly type router and router component props. I also had a `.ts` extension on `PrivateRoute` instead of `.tsx` which was really throwing me off 🤦🏻‍♀️.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## "Future" Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If I had more time to work on the chat app I would love to implement all the features that I thought about along the way including:
+- Multiple chat rooms
+    - Ability to invite specific users to said chat room
+- User avatars
+- Emoji keyboard 👩🏻‍💻
+- Giphy integration
+- Message reactions (like in iMessage)
+- Chrome notifications
+- Customizable styling of chat dashboard (e.g. dark/light mode)
+- Write more tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
