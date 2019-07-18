@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat Renders without crashing 1`] = `
+<div
+  class="main"
+>
+  <div
+    class="header"
+  >
+    <button>
+      Change Username
+    </button>
+  </div>
+  <div>
+    <div
+      class="messages"
+    >
+      <span>
+        No messages yet. How about you get this party started?
+        <span
+          aria-label="party popper"
+          role="img"
+        >
+           🎉
+        </span>
+      </span>
+    </div>
+    <form
+      class="message-form"
+    >
+      <textarea />
+      <button>
+        Send
+      </button>
+    </form>
+  </div>
+</div>
+`;

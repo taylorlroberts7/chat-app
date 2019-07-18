@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome Renders without crashing 1`] = `
+<div
+  class="welcome"
+>
+  <div>
+    <h1>
+      Welcome
+    </h1>
+    <span>
+      Enter username to chat it up ↓
+    </span>
+  </div>
+  <form
+    class="username-form"
+  >
+    <input
+      aria-label="Username"
+      placeholder="username"
+      type="text"
+    />
+    <span />
+    <button>
+      Enter Chat
+    </button>
+  </form>
+</div>
+`;
