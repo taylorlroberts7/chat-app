@@ -1,6 +1,8 @@
 # Chat App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deployed App
+
+You can view the deployed version of the app [here](https://chat-app-7473d.firebaseapp.com)
 
 ## Run App Locally
 
