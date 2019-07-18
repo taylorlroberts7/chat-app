@@ -1,4 +1,4 @@
-* {
+html, body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@
     background: $dark-grey;
     display: flex;
     flex-direction: column;
-    font-family: $font-family;
+    font-family: $primary-font;
     min-height: 100vh;
     min-width: 100vw;
 }
@@ -20,4 +20,13 @@
     flex: 1;
     flex-direction: column;
     justify-content: center;
+}
+
+input, textarea, button {
+    font-family: $primary-font;
+    font-size: 14px;
+}
+
+button {
+    cursor: pointer;
 }

@@ -1,8 +1,21 @@
+.header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    button {
+        background: transparent;
+        border: 0;
+        color: $almost-white;
+        text-transform: uppercase;
+    }
+}
+
 .messages {
     background: $light-grey;
     display: flex;
     flex-direction: column;
-    height: 75vh;
+    height: 70vh;
     min-height: 500px;
     overflow: auto;
     padding: 20px;
@@ -21,6 +34,7 @@
         .content {
             border-radius: 4px;
             padding: 9px 11px;
+            width: fit-content;
         }
 
         &.left {
@@ -33,6 +47,7 @@
         }
 
         &.right {
+            align-items: flex-end;
             align-self: flex-end;
 
             .content {
@@ -61,9 +76,6 @@
     textarea {
         border: 0;
         flex: 1;
-        font-family: $font-family;
-        font-size: 14px;
-        height: 100%;
         padding: 8px;
     }
 
@@ -71,7 +83,7 @@
         background: $dark-grey;
         border: 0;
         color: $almost-white;
-        font-family: $font-family;
+        font-family: $primary-font;
         font-size: 14px;
         height: 100%;
         letter-spacing: 1px;
