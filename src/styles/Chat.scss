@@ -1,0 +1,88 @@
+.messages {
+    background: $light-grey;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    min-height: 500px;
+    overflow: auto;
+    padding: 20px;
+    width: 90vw;
+
+    > span {
+        color: $dark-grey;
+    }
+
+    .message {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 18px;
+        width: 70%;
+
+        .content {
+            border-radius: 4px;
+            padding: 9px 11px;
+        }
+
+        &.left {
+
+            .content {
+                background: $almost-white;
+                border: 0.5px solid $dark-grey;
+                color: $dark-grey;
+            }
+        }
+
+        &.right {
+            align-self: flex-end;
+
+            .content {
+                background: $dark-grey;
+                border: 0.5px solid $almost-white;
+                color: $almost-white;
+            }
+        }
+
+        .user-info {
+            color: $grey;
+            font-size: 10px;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+    }
+
+}
+
+.message-form {
+    border: 1px solid $almost-white;
+    border-top: 1px solid $dark-grey;
+    display: flex;
+    height: 60px;
+
+    textarea {
+        border: 0;
+        flex: 1;
+        font-family: $font-family;
+        font-size: 14px;
+        height: 100%;
+        padding: 8px;
+    }
+
+    button {
+        background: $dark-grey;
+        border: 0;
+        color: $almost-white;
+        font-family: $font-family;
+        font-size: 14px;
+        height: 100%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        width: 70px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .messages {
+        width: 500px;
+    }
+}
