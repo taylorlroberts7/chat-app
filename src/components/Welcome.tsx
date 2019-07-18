@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { database } from '../firebase';
 import { RouteComponentProps } from 'react-router';
 
 const { useState } = React;
 
-const Welcome: React.FC<RouteComponentProps> = (props) => {
+const Welcome: React.FC<RouteComponentProps> = ({ history }) => {
 
     const [error, setError] = useState<string | null>(null);
     const [username, setUsername] = useState<string | null>(null);
@@ -12,12 +11,12 @@ const Welcome: React.FC<RouteComponentProps> = (props) => {
     return (
         <div className="welcome">
             <div>
-                <h1>WELCOME</h1>
+                <h1>Welcome</h1>
                 <span>Enter username to chat it up &darr;</span>
             </div>
             <form
                 className="username-form"
-                onSubmit={e => handleUsernameSubmit(e, username, props.history, setError)}
+                onSubmit={e => handleUsernameSubmit(e, username, history, setError)}
             >
                 <input
                     aria-label="Username"
@@ -26,7 +25,7 @@ const Welcome: React.FC<RouteComponentProps> = (props) => {
                     type="text"
                 />
                 <span>{error}</span>
-                <button>Start Chattin</button>
+                <button>Enter Chat</button>
             </form>
         </div>
     );
@@ -61,7 +60,6 @@ const handleUsernameSubmit = (
     }
 
     sessionStorage.setItem('username', username!);
-    database.ref('users').push({ username });
     history.push('/chat');
 
 };

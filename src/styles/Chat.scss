@@ -21,6 +21,13 @@
     padding: 20px;
     width: 90vw;
 
+    &.loading {
+        align-items: center;
+        color: $dark-grey;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+
     > span {
         color: $dark-grey;
     }

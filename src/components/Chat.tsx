@@ -7,6 +7,7 @@ export default class Chat extends React.Component<RouteComponentProps, IChatStat
 
     state: IChatState = {
         error: null,
+        loading: true,
         newMessage: null,
         messages: []
     };
@@ -33,7 +34,7 @@ export default class Chat extends React.Component<RouteComponentProps, IChatStat
 
             }
 
-            this.setState({ messages });
+            this.setState({ loading: false, messages });
 
         });
 
@@ -41,13 +42,13 @@ export default class Chat extends React.Component<RouteComponentProps, IChatStat
 
     render() {
 
-        const { error, messages } = this.state;
+        const { error, loading, messages } = this.state;
 
         return (
             <div className="main">
                 <Header history={this.props.history} />
                 <div>
-                    <Messages messages={messages} />
+                    <Messages loading={loading} messages={messages} />
                     <form
                         className="message-form"
                         onSubmit={this._handleSendMessage}
@@ -121,6 +122,7 @@ export default class Chat extends React.Component<RouteComponentProps, IChatStat
 
 interface IChatState {
     error: string | null;
+    loading: boolean;
     newMessage: string | null;
     messages: IMessage[];
 }

@@ -13,17 +13,9 @@ exports[`Chat Renders without crashing 1`] = `
   </div>
   <div>
     <div
-      class="messages"
+      class="messages loading"
     >
-      <span>
-        No messages yet. How about you get this party started?
-        <span
-          aria-label="party popper"
-          role="img"
-        >
-           🎉
-        </span>
-      </span>
+      Loading messages
     </div>
     <form
       class="message-form"

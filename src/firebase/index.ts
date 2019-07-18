@@ -1,4 +1,5 @@
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 // Normally I would store these values in environemnt variables
 // but in this case I am hard coding them so it can be run locally :)
