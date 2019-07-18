@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: $dark-grey;
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.main {
+    align-items: center;
+    color: $almost-white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
