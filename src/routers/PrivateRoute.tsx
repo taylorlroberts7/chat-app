@@ -11,9 +11,7 @@ const PrivateRouter = ({
     const routeComponent = (props: RouteProps) => (
         !!username ? (
             <div className="container">
-                <div className="main">
-                    <Component {...props} />
-                </div>
+                <Component {...props} />
             </div>
         ) : (
                 <Redirect to="/" />
@@ -27,6 +25,6 @@ const PrivateRouter = ({
         />
     );
 
-}
+};
 
 export default PrivateRouter;

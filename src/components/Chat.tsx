@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { database } from '../firebase';
-import { Messages } from './index';
+import { Messages, Header } from './index';
+import { RouteComponentProps } from 'react-router';
 
-export default class Chat extends React.Component<null, IChatState> {
+export default class Chat extends React.Component<RouteComponentProps, IChatState> {
 
     state: IChatState = {
         error: null,
         newMessage: null,
         messages: []
-    }
+    };
 
     _inputRef = React.createRef<HTMLTextAreaElement>();
 
@@ -43,22 +44,25 @@ export default class Chat extends React.Component<null, IChatState> {
         const { error, messages } = this.state;
 
         return (
-            <div>
-                <Messages messages={messages} />
-                <form
-                    className="message-form"
-                    onSubmit={this._handleSendMessage}
-                >
-                    <textarea
-                        onChange={e => this.setState({ newMessage: e.target.value })}
-                        onKeyDown={this._handleEnterPress}
-                        ref={this._inputRef}
-                    />
-                    <button>Send</button>
-                </form>
-                {error}
+            <div className="main">
+                <Header history={this.props.history} />
+                <div>
+                    <Messages messages={messages} />
+                    <form
+                        className="message-form"
+                        onSubmit={this._handleSendMessage}
+                    >
+                        <textarea
+                            onChange={e => this.setState({ newMessage: e.target.value })}
+                            onKeyDown={this._handleEnterPress}
+                            ref={this._inputRef}
+                        />
+                        <button>Send</button>
+                    </form>
+                    {error}
+                </div>
             </div>
-        )
+        );
     }
 
     _handleEnterPress = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -89,8 +93,9 @@ export default class Chat extends React.Component<null, IChatState> {
 
         try {
 
-            const username = window.sessionStorage.getItem('username');
+            this.setState({ error: null });
 
+            const username = window.sessionStorage.getItem('username');
             const value = {
                 text: newMessage,
                 sentAt: Date.now(),
@@ -105,8 +110,7 @@ export default class Chat extends React.Component<null, IChatState> {
 
         } catch (e) {
 
-            // TODO: Update error message
-            const error = 'Woopsies';
+            const error = 'Uh oh! Your message wasn\'t sent but please try again!';
             this.setState({ error });
 
         }

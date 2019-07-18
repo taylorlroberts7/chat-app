@@ -21,7 +21,8 @@ const Message: React.FC<IMessageProps> = ({ message }) => {
             </span>
         </div>
     );
-}
+
+};
 
 export default Message;
 
