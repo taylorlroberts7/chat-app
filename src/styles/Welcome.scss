@@ -6,6 +6,10 @@
     min-height: 25vh;
     width: 70vw;
 
+    > div {
+        margin-bottom: 30px;
+    }
+
     h1 {
         font-weight: 300;
         text-transform: uppercase;
@@ -60,6 +64,5 @@
 
     .username-form {
         width: 100%;
-
     }
 }
